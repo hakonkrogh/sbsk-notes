@@ -11,9 +11,9 @@ Digitize and organize marching band sheet music.
 
 ## Scanning tips
 
-- One page per image
 - Make sure the title, arranger, and instrument/part info at the top of the page is visible and readable
 - PNG, JPG, TIFF, BMP, and WebP are all supported
+- Multi-page PDFs are supported — each page is split out and OCR'd independently, so different songs/parts can be in the same PDF
 - File names don't matter — they get renamed automatically based on OCR results
 
 ## Folder structure
@@ -38,6 +38,11 @@ data/library/
     ├── alto-sax-1.png
     └── snare-1.png
 ```
+
+## Prerequisites
+
+- **Node.js** ≥ 18
+- **poppler** — required for PDF support (`brew install poppler` on macOS)
 
 ## Commands
 

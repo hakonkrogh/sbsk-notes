@@ -18,6 +18,10 @@ The goal is to digitize this archive into a searchable, organized digital librar
 
 A band director sits down with a stack of sheet music and a phone/scanner. They scan each page as an image and drop the files into the inbox folder. They run the scan command to verify the OCR correctly identified the song title, arranger, instrument, and part number for each page. If results look good, they run organize to file everything into the library automatically.
 
+### UC-1b: Digitize a multi-page PDF
+
+A scanner produces a single PDF with many pages — each page is a different part and may belong to a different song. The director drops the PDF into the inbox. The scan command splits it into individual pages, runs OCR on each one independently, and presents results per page. Organizing files each page into the library separately based on its own metadata.
+
 ### UC-2: Find a specific part
 
 Before rehearsal, a section leader needs the Trumpet 2 part for "Stars and Stripes Forever." They search the library by song title and instrument and get the file path to the correct image.
