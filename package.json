@@ -1,0 +1,8 @@
+{
+  "name": "sbsk-notes",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm --filter @sbsk-notes/cli dev"
+  }
+}
