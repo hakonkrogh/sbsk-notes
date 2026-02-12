@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm -r build:*)",
+      "Bash(pdftoppm:*)",
+      "Bash(ls:*)",
+      "Bash(npx tsx:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm --filter @sbsk-notes/core test:*)",
+      "Bash(sips:*)",
+      "Bash(python3:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh repo view:*)",
+      "Bash(pnpm --filter @sbsk-notes/core build:*)"
+    ]
+  }
+}

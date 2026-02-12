@@ -12,14 +12,16 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsx src/index.ts"
-  },
-  "dependencies": {
-    "tesseract.js": "^5.1.1"
+    "dev": "tsx src/index.ts",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "typescript": "^5.7.3",
+    "@types/node": "^22.13.1",
     "tsx": "^4.19.2",
-    "@types/node": "^22.13.1"
+    "typescript": "^5.7.3",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@gutenye/ocr-node": "^1.4.8"
   }
 }

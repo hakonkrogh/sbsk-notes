@@ -1,4 +1,4 @@
-import { recognizeWithTesseract } from "./tesseract.js"
+import { recognizeWithPaddle } from "./paddle.js"
 import type { OcrResult } from "../types.js"
 
 function parseRawText(raw: string): Omit<OcrResult, "raw"> {
@@ -61,7 +61,7 @@ function parseRawText(raw: string): Omit<OcrResult, "raw"> {
 }
 
 export async function scan(imagePath: string): Promise<OcrResult> {
-  const raw = await recognizeWithTesseract(imagePath)
+  const raw = await recognizeWithPaddle(imagePath)
   const parsed = parseRawText(raw)
   return { ...parsed, raw }
 }
