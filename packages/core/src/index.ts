@@ -1,8 +1,7 @@
 export type {
   SongMetadata,
-  OcrResult,
+  PageFiling,
   LibraryEntry,
-  ScanResult,
 } from "./types.js"
 
 export { scan } from "./ocr/index.js"

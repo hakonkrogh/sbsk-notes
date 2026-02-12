@@ -3,12 +3,11 @@ export interface SongMetadata {
   arranger: string
 }
 
-export interface OcrResult {
-  metadata: SongMetadata
+export interface PageFiling {
+  title: string
+  arranger: string
   instrument: string
   part: number
-  confidence: number
-  raw: string
 }
 
 export interface LibraryEntry {
@@ -16,9 +15,4 @@ export interface LibraryEntry {
   instrument: string
   part: number
   filePath: string
-}
-
-export interface ScanResult {
-  sourcePath: string
-  ocrResult: OcrResult
 }

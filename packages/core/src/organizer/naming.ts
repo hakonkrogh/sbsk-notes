@@ -1,4 +1,4 @@
-import type { OcrResult } from "../types.js"
+import type { PageFiling } from "../types.js"
 import path from "node:path"
 
 function slugify(text: string): string {
@@ -10,12 +10,12 @@ function slugify(text: string): string {
 
 export function buildTargetPath(
   libraryDir: string,
-  ocrResult: OcrResult,
+  filing: PageFiling,
   ext: string = ".png"
 ): string {
-  const { metadata, instrument, part } = ocrResult
-  const songSlug = slugify(metadata.title)
-  const arrangerSlug = slugify(metadata.arranger)
+  const { title, arranger, instrument, part } = filing
+  const songSlug = slugify(title)
+  const arrangerSlug = slugify(arranger)
   const instrumentSlug = slugify(instrument)
 
   const folderName = arrangerSlug

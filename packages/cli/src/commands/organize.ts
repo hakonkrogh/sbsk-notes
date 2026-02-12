@@ -1,5 +1,6 @@
 import path from "node:path"
 import { scan, organize, splitPdf } from "@sbsk-notes/core"
+import { parse, toPageFiling } from "@sbsk-notes/parser"
 import fs from "node:fs/promises"
 
 const IMAGE_EXTS = new Set([".png", ".jpg", ".jpeg", ".tiff", ".tif", ".bmp", ".webp"])
@@ -45,8 +46,10 @@ export async function organizeCommand(
         console.log(`Processing: ${file} (page ${i + 1} of ${totalPages})`)
 
         try {
-          const ocrResult = await scan(pagePng)
-          const result = await organize(pagePng, libraryDir, ocrResult)
+          const raw = await scan(pagePng)
+          const parseResult = parse(raw)
+          const filing = toPageFiling(parseResult)
+          const result = await organize(pagePng, libraryDir, filing)
           console.log(`  -> ${path.relative(libraryDir, result.targetPath)}`)
         } catch (err) {
           console.error(`  Failed page ${i + 1}: ${err}`)
@@ -65,8 +68,10 @@ export async function organizeCommand(
       console.log(`Processing: ${file}`)
 
       try {
-        const ocrResult = await scan(filePath)
-        const result = await organize(filePath, libraryDir, ocrResult)
+        const raw = await scan(filePath)
+        const parseResult = parse(raw)
+        const filing = toPageFiling(parseResult)
+        const result = await organize(filePath, libraryDir, filing)
         console.log(`  -> ${path.relative(libraryDir, result.targetPath)}`)
       } catch (err) {
         console.error(`  Failed: ${err}`)

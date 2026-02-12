@@ -16,7 +16,12 @@
       "Bash(gh issue view:*)",
       "Bash(gh issue list:*)",
       "Bash(gh repo view:*)",
-      "Bash(pnpm --filter @sbsk-notes/core build:*)"
+      "Bash(pnpm --filter @sbsk-notes/core build:*)",
+      "Bash(pnpm --filter @sbsk-notes/core exec vitest run:*)",
+      "Bash(pnpm --filter @sbsk-notes/parser test:*)",
+      "Bash(pnpm --filter @sbsk-notes/parser build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx --package=typescript tsc:*)"
     ]
   }
 }
