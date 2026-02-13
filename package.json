@@ -1,8 +1,14 @@
 {
   "name": "sbsk-notes",
   "private": true,
+  "packageManager": "pnpm@9.15.1",
   "scripts": {
-    "build": "pnpm -r build",
-    "dev": "pnpm --filter @sbsk-notes/cli dev"
+    "build": "turbo run build",
+    "dev": "turbo run dev --filter=@sbsk-notes/web",
+    "dev:web": "turbo run dev --filter=@sbsk-notes/web",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.7"
   }
 }

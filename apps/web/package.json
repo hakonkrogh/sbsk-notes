@@ -1,0 +1,32 @@
+{
+  "name": "@sbsk-notes/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@radix-ui/themes": "^3.3.0",
+    "@sbsk-notes/core": "workspace:*",
+    "@sbsk-notes/parser": "workspace:*",
+    "drizzle-orm": "^0.45.1",
+    "nanoid": "^5.1.6",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-dropzone": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "drizzle-kit": "^0.31.9",
+    "typescript": "^5.9.3"
+  }
+}

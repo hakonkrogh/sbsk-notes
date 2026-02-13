@@ -21,7 +21,17 @@
       "Bash(pnpm --filter @sbsk-notes/parser test:*)",
       "Bash(pnpm --filter @sbsk-notes/parser build:*)",
       "Bash(npx tsc:*)",
-      "Bash(npx --package=typescript tsc:*)"
+      "Bash(npx --package=typescript tsc:*)",
+      "Bash(xargs:*)",
+      "Bash(du -sh:*)",
+      "Bash(wc:*)",
+      "Bash(node --version:*)",
+      "Bash(pnpm:*)",
+      "Bash(npm view:*)",
+      "WebFetch(domain:turbo.build)",
+      "WebFetch(domain:turborepo.dev)",
+      "Bash(npx turbo:*)",
+      "Bash(lsof:*)"
     ]
   }
 }
