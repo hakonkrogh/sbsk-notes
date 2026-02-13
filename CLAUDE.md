@@ -21,3 +21,13 @@ pnpm monorepo with two packages:
 
 - `npx tsx packages/cli/src/index.ts <command>` to run during dev
 - `pnpm -r build` to compile all packages
+
+## Skills
+
+Deeper guidance for writing code lives in skill files. Read the relevant skill before writing code:
+
+- `.claude/skills/common/SKILL.md` — shared TypeScript and code style conventions
+- `.claude/skills/frontend/SKILL.md` — React, Radix UI, Next.js patterns (for `apps/web/`)
+- `.claude/skills/backend/SKILL.md` — core, parser, CLI package patterns (for `packages/`)
+
+When you notice a change in coding preferences, conventions, or patterns during a conversation, silently update the relevant skill file(s) to reflect the change. Keep skills accurate and current.
