@@ -21,11 +21,18 @@ const STATUS_COLOR: Record<string, "orange" | "blue" | "green" | "red"> = {
   failed: "red",
 }
 
+const STATUS_LABEL: Record<string, string> = {
+  pending: "Venter",
+  processing: "Behandler",
+  done: "Ferdig",
+  failed: "Feilet",
+}
+
 export function QueueTable({ files }: { files: QueueFile[] }) {
   if (files.length === 0) {
     return (
       <Text size="3" color="gray">
-        No files in queue.
+        Ingen filer i køen.
       </Text>
     )
   }
@@ -34,12 +41,12 @@ export function QueueTable({ files }: { files: QueueFile[] }) {
     <Table.Root variant="surface">
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeaderCell>File</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Fil</Table.ColumnHeaderCell>
           <Table.ColumnHeaderCell>Status</Table.ColumnHeaderCell>
-          <Table.ColumnHeaderCell>Parsed Title</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Tolket tittel</Table.ColumnHeaderCell>
           <Table.ColumnHeaderCell>Instrument</Table.ColumnHeaderCell>
-          <Table.ColumnHeaderCell>Confidence</Table.ColumnHeaderCell>
-          <Table.ColumnHeaderCell>Actions</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Sikkerhet</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Handlinger</Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
@@ -49,7 +56,7 @@ export function QueueTable({ files }: { files: QueueFile[] }) {
               <Text size="2">{file.originalName}</Text>
             </Table.Cell>
             <Table.Cell>
-              <Badge color={STATUS_COLOR[file.status]}>{file.status}</Badge>
+              <Badge color={STATUS_COLOR[file.status]}>{STATUS_LABEL[file.status]}</Badge>
             </Table.Cell>
             <Table.Cell>
               <Text size="2">{file.parsedTitle ?? "—"}</Text>
@@ -76,7 +83,7 @@ export function QueueTable({ files }: { files: QueueFile[] }) {
                     variant="soft"
                     onClick={() => retryProcessing(file.id)}
                   >
-                    Retry
+                    Prøv igjen
                   </Button>
                 )}
                 {file.errorMessage && (

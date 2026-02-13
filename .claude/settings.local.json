@@ -31,7 +31,8 @@
       "WebFetch(domain:turbo.build)",
       "WebFetch(domain:turborepo.dev)",
       "Bash(npx turbo:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "WebFetch(domain:www.radix-ui.com)"
     ]
   }
 }

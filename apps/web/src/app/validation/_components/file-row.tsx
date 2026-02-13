@@ -30,7 +30,7 @@ export function FileRow({
       onClick={onClick}
       style={{
         cursor: "pointer",
-        background: focused ? "var(--blue-a3)" : "transparent",
+        background: focused ? "var(--accent-a3)" : "transparent",
         borderRadius: "var(--radius-2)",
         userSelect: "none",
       }}

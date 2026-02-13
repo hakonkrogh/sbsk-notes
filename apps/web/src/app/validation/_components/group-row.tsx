@@ -19,6 +19,12 @@ const STATUS_COLOR: Record<string, "orange" | "green" | "red"> = {
   rejected: "red",
 }
 
+const STATUS_LABEL: Record<string, string> = {
+  pending: "Venter",
+  approved: "Godkjent",
+  rejected: "Avvist",
+}
+
 export function GroupRow({
   title,
   arranger,
@@ -37,7 +43,7 @@ export function GroupRow({
       onClick={onToggle}
       style={{
         cursor: "pointer",
-        background: focused ? "var(--blue-a3)" : "transparent",
+        background: focused ? "var(--accent-a3)" : "transparent",
         borderRadius: "var(--radius-2)",
         userSelect: "none",
       }}
@@ -54,10 +60,10 @@ export function GroupRow({
         </Text>
       )}
       <Badge color={STATUS_COLOR[status]} size="1">
-        {status}
+        {STATUS_LABEL[status]}
       </Badge>
       <Text size="1" color="gray">
-        {fileCount} {fileCount === 1 ? "file" : "files"}
+        {fileCount} {fileCount === 1 ? "fil" : "filer"}
       </Text>
     </Flex>
   )

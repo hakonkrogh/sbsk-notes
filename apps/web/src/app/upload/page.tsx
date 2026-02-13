@@ -20,7 +20,7 @@ export default async function UploadPage() {
 
   return (
     <Flex direction="column" gap="5">
-      <Heading size="6">Upload</Heading>
+      <Heading size="6">Last opp</Heading>
       <Dropzone />
       <UploadList files={recentFiles} />
     </Flex>

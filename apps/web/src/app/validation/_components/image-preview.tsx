@@ -22,7 +22,7 @@ export function ImagePreview({ file }: { file: PreviewFile | null }) {
         style={{ height: "100%", background: "var(--gray-a2)", borderRadius: "var(--radius-3)" }}
       >
         <Text size="3" color="gray">
-          Select a file to preview
+          Velg en fil for forhåndsvisning
         </Text>
       </Flex>
     )
@@ -54,20 +54,20 @@ export function ImagePreview({ file }: { file: PreviewFile | null }) {
           {file.originalName}
         </Text>
         {file.parsedTitle && (
-          <MetadataRow label="Title" value={file.parsedTitle} />
+          <MetadataRow label="Tittel" value={file.parsedTitle} />
         )}
         {file.parsedArranger && (
-          <MetadataRow label="Arranger" value={file.parsedArranger} />
+          <MetadataRow label="Arrangør" value={file.parsedArranger} />
         )}
         {file.parsedInstrument && (
           <MetadataRow
             label="Instrument"
-            value={`${file.parsedInstrument}${file.parsedPart ? ` Part ${file.parsedPart}` : ""}`}
+            value={`${file.parsedInstrument}${file.parsedPart ? ` stemme ${file.parsedPart}` : ""}`}
           />
         )}
         {file.parsedConfidence != null && (
           <MetadataRow
-            label="Confidence"
+            label="Sikkerhet"
             value={`${(file.parsedConfidence * 100).toFixed(0)}%`}
           />
         )}

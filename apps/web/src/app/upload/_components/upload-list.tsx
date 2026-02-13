@@ -15,6 +15,13 @@ const STATUS_COLOR: Record<string, "orange" | "blue" | "green" | "red"> = {
   failed: "red",
 }
 
+const STATUS_LABEL: Record<string, string> = {
+  pending: "Venter",
+  processing: "Behandler",
+  done: "Ferdig",
+  failed: "Feilet",
+}
+
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
@@ -25,7 +32,7 @@ export function UploadList({ files }: { files: FileRow[] }) {
   if (files.length === 0) {
     return (
       <Text size="3" color="gray">
-        No files uploaded yet.
+        Ingen filer lastet opp ennå.
       </Text>
     )
   }
@@ -34,10 +41,10 @@ export function UploadList({ files }: { files: FileRow[] }) {
     <Table.Root variant="surface">
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeaderCell>Name</Table.ColumnHeaderCell>
-          <Table.ColumnHeaderCell>Size</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Navn</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Størrelse</Table.ColumnHeaderCell>
           <Table.ColumnHeaderCell>Status</Table.ColumnHeaderCell>
-          <Table.ColumnHeaderCell>Uploaded</Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Lastet opp</Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
@@ -52,7 +59,7 @@ export function UploadList({ files }: { files: FileRow[] }) {
               </Text>
             </Table.Cell>
             <Table.Cell>
-              <Badge color={STATUS_COLOR[file.status]}>{file.status}</Badge>
+              <Badge color={STATUS_COLOR[file.status]}>{STATUS_LABEL[file.status]}</Badge>
             </Table.Cell>
             <Table.Cell>
               <Text size="2" color="gray">

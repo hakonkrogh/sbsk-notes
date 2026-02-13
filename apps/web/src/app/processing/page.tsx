@@ -24,10 +24,10 @@ export default async function ProcessingPage() {
   return (
     <Flex direction="column" gap="5">
       <Flex justify="between" align="center">
-        <Heading size="6">Processing Queue</Heading>
+        <Heading size="6">Behandlingskø</Heading>
         <form action={processPending}>
           <Button type="submit" variant="solid">
-            Process All Pending
+            Behandle ventende
           </Button>
         </form>
       </Flex>

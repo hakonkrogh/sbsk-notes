@@ -33,17 +33,17 @@ export function Dropzone() {
         borderRadius: "var(--radius-3)",
         padding: "var(--space-8)",
         cursor: "pointer",
-        background: isDragActive ? "var(--blue-a2)" : "var(--gray-a2)",
+        background: isDragActive ? "var(--accent-a2)" : "var(--gray-a2)",
         transition: "background 150ms",
       }}
     >
       <input {...getInputProps()} />
       <Flex direction="column" align="center" gap="2">
-        <Text size="4" weight="medium" color={isDragActive ? "blue" : undefined}>
-          {isDragActive ? "Drop files here..." : "Drag & drop sheet music files"}
+        <Text size="4" weight="medium" color={isDragActive ? "orange" : undefined}>
+          {isDragActive ? "Slipp filene her..." : "Dra og slipp noteark"}
         </Text>
         <Text size="2" color="gray">
-          PNG, JPG, or PDF
+          PNG, JPG eller PDF
         </Text>
       </Flex>
     </Box>

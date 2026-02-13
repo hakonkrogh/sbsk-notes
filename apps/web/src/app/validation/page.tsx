@@ -39,7 +39,7 @@ export default async function ValidationPage() {
 
   return (
     <Flex direction="column" gap="4">
-      <Heading size="6">Validation</Heading>
+      <Heading size="6">Validering</Heading>
       <GroupTree groups={groupsWithFiles} />
     </Flex>
   )

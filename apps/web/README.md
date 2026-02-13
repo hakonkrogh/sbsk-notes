@@ -2,6 +2,10 @@
 
 Web interface for the SBSK sheet music ingestion pipeline. Upload scanned pages, process them through OCR, and validate the results before organizing into the library.
 
+## Language
+
+The UI is Norwegian (bokmål). All strings are hardcoded inline — no i18n framework. Status enum values remain English in the database; `STATUS_LABEL` maps translate them for display.
+
 ## Prerequisites
 
 - Node.js 20.9+

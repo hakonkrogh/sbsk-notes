@@ -1,11 +1,11 @@
-import { Theme, Text, Box } from "@radix-ui/themes"
+import { Theme, Text, Box, Heading, Separator } from "@radix-ui/themes"
 import Link from "next/link"
 import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
   title: "SBSK Notes",
-  description: "Sheet music ingestion pipeline",
+  description: "Behandlingsverktøy for noteark",
 }
 
 function SidebarLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -22,20 +22,26 @@ function SidebarLink({ href, children }: { href: string; children: React.ReactNo
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="no" suppressHydrationWarning>
       <body>
-        <Theme accentColor="blue" radius="medium">
-          <nav className="sidebar">
-            <Box mb="4">
-              <Text size="5" weight="bold">
-                SBSK Notes
-              </Text>
-            </Box>
-            <SidebarLink href="/upload">Upload</SidebarLink>
-            <SidebarLink href="/processing">Processing</SidebarLink>
-            <SidebarLink href="/validation">Validation</SidebarLink>
-          </nav>
-          <main className="main-content">{children}</main>
+        <Theme accentColor="orange" grayColor="sand" radius="large" panelBackground="solid">
+          <div className="app-layout">
+            <nav className="sidebar">
+              <Box mb="2">
+                <Heading size="4" color="orange">
+                  SBSK Notes
+                </Heading>
+                <Text size="1" color="gray">
+                  Notearkbehandling
+                </Text>
+              </Box>
+              <Separator size="4" mb="2" />
+              <SidebarLink href="/upload">Last opp</SidebarLink>
+              <SidebarLink href="/processing">Behandling</SidebarLink>
+              <SidebarLink href="/validation">Validering</SidebarLink>
+            </nav>
+            <main className="main-content">{children}</main>
+          </div>
         </Theme>
       </body>
     </html>

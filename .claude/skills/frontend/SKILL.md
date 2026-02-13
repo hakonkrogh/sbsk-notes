@@ -35,17 +35,19 @@ Layout and spacing via component props:
 
 Current theme configuration:
 ```tsx
-<Theme accentColor="blue" radius="medium">
+<Theme accentColor="orange" grayColor="sand" radius="large" panelBackground="solid">
 ```
 
-CSS variables for dynamic/conditional styles:
+CSS variables for dynamic/conditional styles — always use `--accent-*` (not `--orange-*` or `--blue-*`) so colors follow the theme:
 ```tsx
 style={{
-  background: focused ? "var(--blue-a3)" : "transparent",
+  background: focused ? "var(--accent-a3)" : "transparent",
   borderRadius: "var(--radius-2)",
   border: "2px dashed var(--gray-a7)",
 }}
 ```
+
+Background layering: sidebar uses `var(--gray-3)`, main content uses `var(--gray-2)`. Table `variant="surface"` and Card components sit on this warm base as white panels.
 
 Status colors follow the pattern:
 ```tsx
